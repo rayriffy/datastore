@@ -1,0 +1,1 @@
+export const indexedDB = window.indexedDB.open('', 1)
