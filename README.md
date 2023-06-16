@@ -5,6 +5,8 @@ Browser-level KV store, utilizing both IndexedDB and local storage.
 
 This library will provide benefits of almost unlimited storage size of IndexedDB, with ease of use when interacting with interface like LocalStorage.
 
+If browser does not have IndexedDB, this library will performs a fallback to LocalStorage by itself
+
 Install
 ---
 
