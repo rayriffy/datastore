@@ -1,7 +1,7 @@
 {
   "name": "@rayriffy/datastore",
   "version": "1.1.2",
-  "description": "",
+  "description": "Browser-level KV store, utilizing both IndexedDB and local storage.",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
