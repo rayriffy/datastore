@@ -24,7 +24,7 @@ export class IndexedDBStore implements Store {
     let tx = database.transaction('kv', 'readonly')
     let val = await tx.objectStore('kv').get(key)
     await tx.done
-    return val
+    return val ?? null
   }
 
   async set<T = unknown>(key: string, value: T) {
