@@ -1,11 +1,11 @@
-import idb, { IDBPDatabase } from 'idb'
+import { openDB, IDBPDatabase } from 'idb'
 import { Store } from '../@types/Store'
 
 export class IndexedDBStore implements Store {
   databasePromise: Promise<IDBPDatabase>
 
   constructor(database: string) {
-    this.databasePromise = idb.openDB(database, 1, {
+    this.databasePromise = openDB(database, 1, {
       upgrade(database) {
         // create table and index if not exists
         if (!database.objectStoreNames.contains('kv')) {
@@ -21,14 +21,9 @@ export class IndexedDBStore implements Store {
 
   async get<T = unknown>(key: string): Promise<T> {
     let database = await this.databasePromise
-    
     let tx = database.transaction('kv', 'readonly')
-    let store = tx.objectStore('kv')
-
-    let val = await store.get(key)
-
+    let val = await tx.objectStore('kv').get(key)
     await tx.done
-
     return val
   }
 
@@ -36,10 +31,8 @@ export class IndexedDBStore implements Store {
     let database = await this.databasePromise
     
     let tx = database.transaction('kv', 'readwrite')
-    let store = tx.objectStore('kv')
-
     await Promise.all([
-      store.put({ id: key, value }),
+      tx.objectStore('kv').put({ id: key, value }),
       tx.done
     ])
   }
@@ -48,10 +41,8 @@ export class IndexedDBStore implements Store {
     let database = await this.databasePromise
     
     let tx = database.transaction('kv', 'readwrite')
-    let store = tx.objectStore('kv')
-
     await Promise.all([
-      store.delete(key),
+      tx.objectStore('kv').delete(key),
       tx.done
     ])
   }
