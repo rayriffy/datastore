@@ -1,6 +1,6 @@
 {
   "name": "@rayriffy/datastore",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "Phumrapee Limpianchop <mail@rayriffy.com>",
   "description": "Browser-level KV store, utilizing both IndexedDB and local storage.",
   "license": "MIT",
