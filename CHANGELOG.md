@@ -1,5 +1,11 @@
 # @rayriffy/datastore
 
+## 2.0.4
+
+### Patch Changes
+
+- 2d2a6c9: force node auth token
+
 ## 2.0.3
 
 ### Patch Changes
