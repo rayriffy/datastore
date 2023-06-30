@@ -22,13 +22,16 @@ Usage
 const instance = createInstance('indexedDb-database-name')
 
 // set
-await instance.set('key1', {
+await instance.setItem('key1', {
   message: 'amogus'
 })
 
 // get (default to null)
-const val = await instance.get('key1')
+const val = await instance.getItem('key1')
 
 // delete
-await instance.remove('key1')
+await instance.removeItem('key1')
+
+// clear
+await instance.clear()
 ```

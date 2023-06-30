@@ -1,8 +1,8 @@
-import { Store } from "./@types/Store";
-import { IndexedDBStore } from "./functions/indexedDB";
-import { LocalStorageStore } from "./functions/localStorage";
+import { AsyncStore } from './@types/AsyncStore'
+import { IndexedDBStore } from './functions/indexedDB'
+import { LocalStorageStore } from './functions/localStorage'
 
-export const createInstance = (dbName = 'riffy-datastore'): Store => {
+export const createInstance = (dbName = 'riffy-datastore'): AsyncStore => {
   if ('indexedDB' in window) {
     return new IndexedDBStore(dbName)
   } else if ('localStorage' in window) {
