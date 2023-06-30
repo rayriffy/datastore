@@ -1,5 +1,11 @@
 # @rayriffy/datastore
 
+## 2.0.1
+
+### Patch Changes
+
+- ba03cc8: fix publishing
+
 ## 2.0.0
 
 ### Major Changes
