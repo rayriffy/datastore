@@ -1,5 +1,11 @@
 # @rayriffy/datastore
 
+## 2.0.2
+
+### Patch Changes
+
+- 8f9ac1f: Authenticate before publishing
+
 ## 2.0.1
 
 ### Patch Changes
