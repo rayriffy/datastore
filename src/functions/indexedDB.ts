@@ -1,5 +1,7 @@
-import { openDB, IDBPDatabase } from 'idb'
-import { AsyncStore } from '../@types/AsyncStore'
+import { openDB } from 'idb'
+
+import type { IDBPDatabase } from 'idb'
+import type { AsyncStore } from '../@types/AsyncStore'
 
 export class IndexedDBStore implements AsyncStore {
   databasePromise: Promise<IDBPDatabase>

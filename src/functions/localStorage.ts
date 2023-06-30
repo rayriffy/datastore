@@ -1,6 +1,6 @@
 import { compress, decompress } from 'lz-string'
 
-import { AsyncStore } from '../@types/AsyncStore'
+import type { AsyncStore } from '../@types/AsyncStore'
 
 export class LocalStorageStore implements AsyncStore {
   constructor() {}
