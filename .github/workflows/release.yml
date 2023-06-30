@@ -31,6 +31,13 @@ jobs:
         run: pnpm install
       - name: build
         run: pnpm build
+      - name: .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //npm.pkg.github.com/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: changesets
         id: changesets
         uses: changesets/action@v1

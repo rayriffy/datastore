@@ -1,5 +1,4 @@
-datastore
-===
+# datastore
 
 Browser-level KV store, utilizing both IndexedDB and local storage.
 
@@ -7,15 +6,13 @@ This library will provide benefits of almost unlimited storage size of IndexedDB
 
 If browser does not have IndexedDB, this library will performs a fallback to LocalStorage by itself
 
-Install
----
+## Install
 
 ```bash
 pnpm add @rayriffy/datastore
 ```
 
-Usage
----
+## Usage
 
 ```ts
 // initialize (initialize once, use everywhere)
@@ -23,7 +20,7 @@ const instance = createInstance('indexedDb-database-name')
 
 // set (lib will JSON.stringify() for you in localStorage)
 await instance.setItem('key1', {
-  message: 'amogus'
+  message: 'amogus',
 })
 
 // get (default to null) (lib will JSON.parse() for you in localStorage)
@@ -35,3 +32,7 @@ await instance.removeItem('key1')
 // clear
 await instance.clear()
 ```
+
+## Publishing
+
+This repository has been configured to automatically publish NPM packages by [Changesets](https://github.com/changesets/changesets). Run `pnpm changeset` command to publishing your changes before commit.
