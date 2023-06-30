@@ -10,7 +10,7 @@ If browser does not have IndexedDB, this library will performs a fallback to Loc
 Install
 ---
 
-```
+```bash
 pnpm add @rayriffy/datastore
 ```
 
@@ -18,15 +18,15 @@ Usage
 ---
 
 ```ts
-// initialize
+// initialize (initialize once, use everywhere)
 const instance = createInstance('indexedDb-database-name')
 
-// set
+// set (lib will JSON.stringify() for you in localStorage)
 await instance.setItem('key1', {
   message: 'amogus'
 })
 
-// get (default to null)
+// get (default to null) (lib will JSON.parse() for you in localStorage)
 const val = await instance.getItem('key1')
 
 // delete
