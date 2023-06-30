@@ -1,17 +1,17 @@
-import { AsyncStore } from '../@types/AsyncStore'
+import { compress, decompress } from 'lz-string'
 
-// todo: compress value b4 set/get
+import { AsyncStore } from '../@types/AsyncStore'
 
 export class LocalStorageStore implements AsyncStore {
   constructor() {}
 
   public async getItem<T = unknown>(key: string): Promise<T | null> {
     let item = window.localStorage.getItem(key)
-    return item === null ? null : JSON.parse(item)
+    return item === null ? null : JSON.parse(decompress(item))
   }
 
   public async setItem<T = unknown>(key: string, value: T) {
-    window.localStorage.setItem(key, JSON.stringify(value))
+    window.localStorage.setItem(key, compress(JSON.stringify(value)))
   }
 
   public async removeItem(key: string) {

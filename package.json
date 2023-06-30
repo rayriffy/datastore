@@ -10,7 +10,8 @@
   "author": "Phumrapee Limpianchop",
   "license": "ISC",
   "dependencies": {
-    "idb": "^7.1.1"
+    "idb": "^7.1.1",
+    "lz-string": "^1.5.0"
   },
   "devDependencies": {
     "typescript": "^5.1.3"
