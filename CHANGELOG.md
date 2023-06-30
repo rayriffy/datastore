@@ -1,5 +1,11 @@
 # @rayriffy/datastore
 
+## 2.0.3
+
+### Patch Changes
+
+- 89bd6ef: github actions token does not have scope to publish package
+
 ## 2.0.2
 
 ### Patch Changes
