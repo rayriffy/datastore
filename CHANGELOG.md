@@ -1,5 +1,11 @@
 # @rayriffy/datastore
 
+## 2.0.5
+
+### Patch Changes
+
+- e461613: move registry to npm
+
 ## 2.0.4
 
 ### Patch Changes
