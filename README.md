@@ -8,6 +8,14 @@ If browser does not have IndexedDB, this library will performs a fallback to Loc
 
 ## Install
 
+All `@rayriffy` scope will be published in GitHub packages anyway because I don't want to pay NPM for a private scope. Add following config to root project's `.npmrc`
+
+```bash
+cat "@rayriffy:registry=https://npm.pkg.github.com" > .npmrc
+```
+
+Then, it's safe to install
+
 ```bash
 pnpm add @rayriffy/datastore
 ```
